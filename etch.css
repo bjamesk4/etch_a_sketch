@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 640px;
+}
+.gridCell {
+    border-style: solid;
+    padding: 19px;
+    border-width: 1px;
+}
+
+.gridCell.transitioned {
+    background-color: aqua;
+}

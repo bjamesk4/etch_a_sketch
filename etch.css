@@ -1,14 +1,18 @@
 .container {
     display: flex;
     flex-wrap: wrap;
+    /*width: 598px;*/
     width: 512px;
 }
 .gridCell {
+    flex-shrink: 1;
     border-style: solid;
     padding: 15px;
     border-width: 1px;
+    border-style: dotted;
 }
 
 .gridCell.transitioned {
-    background-color: red;
+    background-color:aqua;
 }
+

@@ -1,3 +1,4 @@
+//Variables
 const gridContainer = document.querySelector('.container');
 const clearButton = document.querySelector('.clearButton');
 
@@ -10,30 +11,34 @@ sliderOut.innerHTML = slider.value + 'x' + slider.value;
 
 let gridWidth = slider.value;
 let colorChoice = document.getElementById('colorSelect');
-createGrid();
+
+createGrid(gridWidth);
+
+//WIP
 
 
 
+//COMPLETED
 
+//creates new grid from slider input
+function createGrid(cells) {
+    clearOld();
+    gridContainer.style.setProperty('--grid-rows', cells);
+    gridContainer.style.setProperty('--grid-cols', cells);
+    for (i = 0; i < (cells * cells); i++) {
+        let gridCell = document.createElement('div');
+        gridContainer.appendChild(gridCell).className = "gridCell";
+    }
+    transitionCell();
+}
 
-//clear grid after slider release
+//clear grid and creates new after slider
 slider.onchange = function() {
     gridWidth = slider.value;
-    gridContainer.innerHTML = "";
-    createGrid();
+    createGrid(gridWidth);
 }
 
-//create a group of square divs
-function createGrid() {
-    for (let i = 0; i < gridWidth * gridWidth; i++) {
-        const gridCell = document.createElement('div');
-        gridCell.classList.add('gridCell');
-        gridContainer.appendChild(gridCell);
-        resizeCells();
-        transitionCell();
-    }
-}
-
+//EVENTS
 //updates text values under slider
 slider.oninput = function() {
     sliderOut.innerHTML = this.value + 'x' + this.value;
@@ -45,22 +50,7 @@ clearButton.addEventListener('click', function() {
 });
 
 
-//function to resize cells to fit in container
-function resizeCells() {
-    document.querySelectorAll('.gridCell').forEach((gridCell) => {
-        newCellSize = ((512 / (gridWidth * 2)) - 1) + 'px';
-        gridCell.style.padding=newCellSize;
-        })
-    }
-
-
-// need to resize cells based on size of container and input from slider
-//padding cell size = (container width / slider input * 2) - 1 
-
-
-
-
-
+//FUNCTIONS
 //clear all colored cells
 function clearGrid() {
     document.querySelectorAll('.gridCell').forEach((gridCell) => {
@@ -75,4 +65,9 @@ function transitionCell() {
             gridCell.style.backgroundColor = colorChoice.value;
         })
     });
+}
+
+//clears old grid from DOM
+function clearOld(){
+    gridContainer.textContent = '';
 }

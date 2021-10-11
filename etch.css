@@ -1,15 +1,21 @@
+:root {
+    --grid-cols: 1;
+    --grid-rows: 1;
+}
+
 .container {
-    display: flex;
-    flex-wrap: wrap;
-    /*width: 598px;*/
-    width: 512px;
+    display: grid;
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+    border: 1px solid black;
+    grid-gap: 1px;
+    background-color: black;
+    width: 500px;
+    height: 500px;
 }
 .gridCell {
-    flex-shrink: 1;
-    border-style: solid;
-    padding: 15px;
-    border-width: 1px;
-    border-style: dotted;
+    background-color: white;
+    text-align: center;
 }
 
 .gridCell.transitioned {

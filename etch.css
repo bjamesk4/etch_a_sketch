@@ -1,5 +1,150 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+@media only screen and (max-width: 600px){
+    :root {
+        --grid-cols: 1;
+        --grid-rows: 1;
+    }
+    
+    body {
+        background-color: #464F51;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 5px;
+        align-items: center;
+        
+    }
+    
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 5px;
+    }
+    
+    h1 {
+        color: #0FF4C6;
+        font-family: 'Press Start 2P', cursive;
+        text-align: center;
+    }
+    
+    /* Grid */
+    
+    .container {
+        display: grid;
+        grid-template-rows: repeat(var(--grid-rows), 1fr);
+        grid-template-columns: repeat(var(--grid-cols), 1fr);
+        border: 1px solid black;
+        grid-gap: 1px;
+        background-color: black;
+        width: 300px;
+        height: 300px;
+    }
+    .gridCell {
+        background-color: white;
+        text-align: center;
+    }
+    
+    .gridShell {
+        background-color: #DEFFF2;
+        border: 5px solid #0FF4C6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 325px;
+        height: 325px;
+        margin: 25px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.7), 0 6px 20px 0 rgba(0,0,0,0.69);
+        border-radius: 8px;
+    }
+    
+    /* Controls */
+    
+    .controlCont {
+        display: flex;
+        gap: 18px;
+        justify-content: center;
+        padding: 15px 15px;
+        background-color: #596466;
+        border-radius: 8px;
+        align-items: center;
+    }
+    
+    .slideValueContainer {
+        text-align: center;
+        font-family: 'Press Start 2P', cursive;
+        font-size: 12px;
+        line-height: 20px;
+    }
+    
+    .slideContainer {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.7), 0 6px 20px 0 rgba(0,0,0,0.69);
+    }
+    
+    #range {
+        width: 85px;
+    }
+    
+    #colorSelect {
+        background-color: #0FF4C6;
+        border-style: none;
+        border-radius: 8px;
+        width: 85px;
+        height: 45px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.7), 0 6px 20px 0 rgba(0,0,0,0.69);
+        cursor: pointer;
+    }
+    
+    
+    /* Clear Button */
+    
+    .clearButton {
+        color: #464F51;
+        font-size: 20px;
+        background-color: #DEFFF2;
+        border: 4px solid #0FF4C6;
+        border-radius: 8px;
+        padding: 8px;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.7), 0 6px 20px 0 rgba(0,0,0,0.69);
+        cursor: pointer;
+        width: 85px;
+        transition: 0.5s;
+        text-align: center;
+    }
+    
+    .clearButton span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+    
+    .clearButton span:after {
+        content: ' \00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -13px;
+        transition: 0.5s;
+    }
+    
+    .clearButton:hover span {
+        padding-right: 10px;
+    }
+    
+    .clearButton:active {
+        transform: translateY(2px);
+      }
+    
+    .clearButton:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+}
+
+@media only screen and (min-width: 600px){
 :root {
     --grid-cols: 1;
     --grid-rows: 1;

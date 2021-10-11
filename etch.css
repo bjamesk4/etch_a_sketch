@@ -1,7 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 :root {
     --grid-cols: 1;
     --grid-rows: 1;
 }
+
+body {
+    background-color: #464F51;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 50px;
+    align-items: center;
+    
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 70px;
+    margin-left: -175px;
+}
+
+h1 {
+    color: #0FF4C6;
+    font-family: 'Press Start 2P', cursive;
+}
+
+/* Grid */
 
 .container {
     display: grid;
@@ -18,7 +45,100 @@
     text-align: center;
 }
 
-.gridCell.transitioned {
-    background-color:aqua;
+.gridShell {
+    background-color: #DEFFF2;
+    border: 5px solid #0FF4C6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 525px;
+    height: 525px;
+    margin: 25px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.7), 0 6px 20px 0 rgba(0,0,0,0.69);
+    border-radius: 8px;
+}
+
+/* Controls */
+
+.controlCont {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin: 25px;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #596466;
+    border-radius: 8px;
+}
+
+.slideValueContainer {
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.slideContainer {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.7), 0 6px 20px 0 rgba(0,0,0,0.69);
+}
+
+#range {
+    width: 85px;
+}
+
+#colorSelect {
+    background-color: #0FF4C6;
+    border-style: none;
+    border-radius: 8px;
+    width: 85px;
+    height: 45px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.7), 0 6px 20px 0 rgba(0,0,0,0.69);
+    cursor: pointer;
+}
+
+
+/* Clear Button */
+
+.clearButton {
+    color: #464F51;
+    font-size: 20px;
+    background-color: #DEFFF2;
+    border: 4px solid #0FF4C6;
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.7), 0 6px 20px 0 rgba(0,0,0,0.69);
+    cursor: pointer;
+    width: 85px;
+    transition: 0.5s;
+    text-align: center;
+}
+
+.clearButton span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.clearButton span:after {
+    content: ' \00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -13px;
+    transition: 0.5s;
+}
+
+.clearButton:hover span {
+    padding-right: 10px;
+}
+
+.clearButton:active {
+    transform: translateY(2px);
+  }
+
+.clearButton:hover span:after {
+    opacity: 1;
+    right: 0;
 }
 
